@@ -49,9 +49,9 @@ This project involves a differential drive robot navigating and solving a maze i
    ```bash
    ros2 launch ros_gz_example_bringup diff_drive.launch.py
 10. After running the simulation run the best_path.py script to get the best path based on the generated map:
-   python3 best_path.py
-11. (Opt) If you make changes and want to recompile the project remember to delete the previous builds:
-   ```bash
+    ```bash
+    python3 best_path.py
+11.(Opt) If you make changes and want to recompile the project remember to delete the previous builds:
    rm -rf /log/build/install
 
 
