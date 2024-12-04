@@ -19,26 +19,42 @@ This project involves a differential drive robot navigating and solving a maze i
    - Docker ensures reproducibility with pre-configured ROS 2 Jazzy and Gazebo Harmonic.  
 
 ## Installation
-1. Clone the repository:
+1. Install ROS2:
+   To do this please follow the steps of the official documentation:
+   https://docs.ros.org/en/jazzy/Installation.html
+2. Install Gazebo Harmonic
+    To do this please follow the steps of the official documentation:
+   [https://docs.ros.org/en/jazzy/Installation.html](https://gazebosim.org/docs/latest/getstarted/)
+3. Install slam_toolbox:
+   ```bash
+   sudo apt install ros-jazzy-slam-toolbox
+4. Clone the repository:
    ```bash
    git clone <repository-url>
    cd <repository-folder>
-2. Indicate the system where to look the ROS instalation:
+5. Indicate the system where to look the ROS instalation:
    ```bash
    source /opt/ros/jazzy/setup.bash
-3. Define env variable regarding the Gazebo version:
+6. Define env variable regarding the Gazebo version:
    ```bash
    export GZ_VERSION=harmonic
-4. Access the project directory
+7. Access the project directory
    ```bash
    cd root/template_ws
    source install/local_setup.bash
-5. Run the simulation:
+8. Compile the project:
+   ```bash
+   colcon build
+9. Run the simulation:
    ```bash
    ros2 launch ros_gz_example_bringup diff_drive.launch.py
-6. After running the simulation run the best_path.py script to get the best path based on the generated map:
+10. After running the simulation run the best_path.py script to get the best path based on the generated map:
    ```bash
    python3 best_path.py
+11. (Opt) If you make changes and want to recompile the project remember to delete the previous builds:
+   ```bash
+   rm -rf /log/build/install
+
 
 ------------------------------------------------------------------------------------
 # This project was developed based in the ros_gz_project_template
